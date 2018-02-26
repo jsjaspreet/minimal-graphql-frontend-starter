@@ -1,7 +1,2 @@
-import Foo from './Foo';
-import Home from './Home';
-
-export {
-  Foo,
-  Home
-};
+export Foo from './Foo';
+export Home from './Home';

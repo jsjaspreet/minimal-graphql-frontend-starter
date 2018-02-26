@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { graphql } from 'react-apollo';
-import query from './query.gql';
+import React, { Component } from 'react'
+import Loadable from 'react-loadable'
+import { Loading } from '../../components'
 
-class Foo extends Component {
+const LoadableComponent = Loadable({
+  loader: () => import(/* webpackChunkName: "home" */ './route'),
+  loading: Loading,
+})
+
+class Route extends Component {
   render() {
-    const { data } = this.props;
-    return (
-      <div>
-        HOME PAGE - version {data && data.version}
-      </div>
-    );
+    return <LoadableComponent {...this.props} />
   }
 }
 
-export default graphql(query)(Foo);
+export default Route
