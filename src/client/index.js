@@ -5,7 +5,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import App from './app';
 
-const uri = process.env.NODE_ENV === 'production' ? 'http://0.0.0.0:8181/graphql' : 'http://0.0.0.0:8181/graphql';
+const uri = process.env.NODE_ENV === 'production' ? 'http://pickuradventure.com' : 'http://0.0.0.0:8181/graphql';
 const client = new ApolloClient({ uri });
 
 const render = (Component) => {
