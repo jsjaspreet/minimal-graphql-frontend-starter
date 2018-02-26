@@ -7,8 +7,9 @@
     "build:client": "webpack --config config/webpack/webpack.client.js",
     "build:client:prod": "webpack --config config/webpack/webpack.prod.js",
     "dev": "webpack-dev-server --config config/webpack/webpack.client.js --open --port 9090",
-    "docker:build": "npm run build:client:prod && docker build -t adventure-frontend:${npm_package_version} .",
-    "docker:start": "docker run -dp 8080:80 -t adventure-frontend:${npm_package_version}",
+    "docker:build": "npm run build:client:prod && docker build -t gcr.io/test-project-196319/adventure-frontend:${npm_package_version} .",
+    "docker:start": "docker run -dp 8080:80 -t gcr.io/test-project-196319/adventure-frontend:${npm_package_version}",
+    "docker:push": "gcloud docker -- push gcr.io/test-project-196319/adventure-frontend:${npm_package_version}",
     "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
